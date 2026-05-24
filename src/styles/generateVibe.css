@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color : #462C7D; 
+    --secondary-color : #831C91;
+
+    --space-sm : 8px;
+    --space-md : 16px;
+    --space-lg : 32px;
+
+    --radius-md : 10px;
+    
+    --gap : 10px;
+
+}
+
+.vibeContainer{
+    width: 100%;
+    background-color: rgba(255,255,255,0.9);
+    border-radius: var(--radius-md);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: var(--radius-md);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+    padding: var(--space-md);
+    margin-top: var(--space-md);
+}
+.card1,
+.card2,
+.card3{
+    flex: 1;
+}
+
+@media (min-width : 1440px){
+    form select{
+        width: 100%;
+    }
+}
+@media (max-width : 425px){
+    .selectorCard{
+        flex-direction: column;
+    }
+    .card1,.card2{
+        border:none;
+        margin-bottom: 10px;
+    }
+    .card3,.card2{
+        border-top: 1px solid rgba(0,0,0,0.10);
+    }
+}

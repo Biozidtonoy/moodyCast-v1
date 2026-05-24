@@ -1,0 +1,33 @@
+@import "tailwindcss";
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color : #462C7D; 
+    --secondary-color : #831C91;
+
+    --space-sm : 8px;
+    --space-md : 16px;
+    --space-lg : 32px;
+
+    --radius-md : 10px;
+    
+    --gap : 10px;
+
+}
+
+#root{
+    min-height: 100vh;
+    background: linear-gradient(180deg,#8158df,#5c3da2,#a11fc8 );
+    padding: var(--space-lg);
+}
+
+@media (max-width : 768px){
+    #root{
+        padding: var(--space-md);
+    }
+}
+

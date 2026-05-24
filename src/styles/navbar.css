@@ -1,0 +1,68 @@
+@import "tailwindcss";
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+:root{
+    --primary-color : #462C7D; 
+    --secondary-color : #831C91;
+
+    --space-sm : 8px;
+    --space-md : 16px;
+    --space-lg : 32px;
+
+    --radius-md : 10px;
+    
+    --gap : 10px;
+
+}
+
+@theme {
+    --color-primary : #462C7D;
+}
+
+.navbar{
+    height: 80px;
+}
+
+.searchBar input, .searchBar button{
+    border: 1px solid #f0f0f0;
+}
+
+@media (max-width :768px){
+    .logo{
+        justify-content: center;
+        align-items: center;
+    }
+    .logo h1{
+        font-size: 1.4rem;
+    }
+    .searchBar{
+        justify-content: center;
+        align-items: center;
+    }
+    .searchBar input{
+        padding: 0 var(--space-sm);
+    }
+}
+
+@media (max-width : 425px){
+    .navbar{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: var(--space-sm);
+        gap : 10px;
+    }
+    .logo{
+        justify-content: center;
+        align-items: center;
+    }
+    .logo h1{
+        font-size: 1.2rem;
+    }
+    .searchBar input{
+        padding: 0 var(--space-sm);
+    }
+}
