@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color : #462C7D; 
+    --secondary-color : #831C91;
+
+    --space-sm : 8px;
+    --space-md : 16px;
+    --space-lg : 32px;
+
+    --radius-md : 10px;
+    
+    --gap : 10px;
+
+}
+.container{
+    min-width: 100%;
+    background-color: #462C7D;
+    color: white;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: stretch; 
+    flex-wrap: wrap;
+}
+.gifContainer{
+    flex: 1;
+    border-radius: var(--radius-md);
+}
+.yourWetherVibeContainer{
+    flex: 1;
+}
+.lefts,.rights{
+    background-color: rgba(0,0,0,0.15);
+    padding: var(--space-md);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-md);
+    line-height: 1.5;
+
+}
+
+@media (max-width : 425px){
+    .container{
+        flex-direction: column;
+    }
+    .bottoms{
+        flex-direction: column;
+    }
+}

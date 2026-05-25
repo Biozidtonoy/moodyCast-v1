@@ -1,13 +1,16 @@
 import Navbar from "./Navbar"
 import WeatherDisplay from './WeatherDisplay'
 import useFetchWeather from "../hooks/useFetchWeather";
-import { useState } from "react";
+
 
 import '../styles/hero.css'
 
+type HeroProps = {
+  city: string;
+  setCity: React.Dispatch<React.SetStateAction<string>>;
+}
 
-function Hero() {
-    const [city , setCity ] = useState('Dhaka');
+function Hero({ city, setCity }: HeroProps) {
     
     const { weatherDetails, error, loading } = useFetchWeather(city);
 

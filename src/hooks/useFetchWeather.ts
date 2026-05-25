@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import type { WeatherData } from "../utils/weather";
 
+
 function useFetchWeather(city : string) {
 
   const [weatherDetails, setWeatherDetails] = useState<WeatherData | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const API_KEY = "137dc645711002b7976d16e091af2736";
-
+  const API_KEY=import.meta.env.VITE_WEATHER_API_KEY;
   useEffect(() => {
     if(!city) return;
 
@@ -20,12 +20,11 @@ function useFetchWeather(city : string) {
             "User-Agent": "moodyCast-v1",
           },
         });
-        if (response.status >= 400) {
-          throw new Error("Server down");
-        }
         if(!response.ok){
             throw new Error(" city not found")
         }
+        
+        
         const data = await response.json();
         setWeatherDetails(data);
 
