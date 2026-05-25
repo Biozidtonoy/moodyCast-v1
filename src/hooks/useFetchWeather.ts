@@ -15,11 +15,7 @@ function useFetchWeather(city : string) {
     const fetchWeather = async () => {
         setLoading(true);
       try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`, {
-          headers: {
-            "User-Agent": "moodyCast-v1",
-          },
-        });
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
         if(!response.ok){
             throw new Error(" city not found")
         }
